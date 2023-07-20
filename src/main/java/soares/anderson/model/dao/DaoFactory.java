@@ -1,16 +1,17 @@
 package soares.anderson.model.dao;
 
-import soares.anderson.dataBase.DataBase;
-import soares.anderson.model.dao.impl.DepartmentDao;
-import soares.anderson.model.dao.impl.SellerDao;
+
+import soares.anderson.dataBase.DB;
+import soares.anderson.model.dao.impl.DepartmentDaoJDBC;
+import soares.anderson.model.dao.impl.SellerDaoJDBC;
 
 public class DaoFactory {
 
-    public static Dao creatSellerDao(){
-        return new SellerDao(DataBase.getConnection());
-    }
-
-    public static Dao creatDeparmentDao(){
-        return new DepartmentDao();
-    }
+	public static SellerDao createSellerDao() {
+		return new SellerDaoJDBC(DB.getConnection());
+	}
+	
+	public static DepartmentDao createDepartmentDao() {
+		return new DepartmentDaoJDBC(DB.getConnection());
+	}
 }
