@@ -1,4 +1,4 @@
-package soares.anderson.Db.model;
+package soares.anderson.dataBase;
 
 public class DataBaseIntegrityException extends RuntimeException{
 
