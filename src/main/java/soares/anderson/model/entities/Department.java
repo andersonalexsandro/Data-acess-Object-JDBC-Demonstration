@@ -5,10 +5,11 @@ import java.util.Objects;
 
 public class Department implements Serializable {
     private static final long serialVersionUID = 1L;
-    private int id;
+    private final int id;
     private String name;
 
-    public Department(){
+    public Department(int id){
+        this.id = id;
     }
 
     public Department(int id, String name) {
@@ -22,6 +23,10 @@ public class Department implements Serializable {
 
     public String getName(){
         return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
